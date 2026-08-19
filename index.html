@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Hari Maritim Nasional Indonesia — Menjaga Laut, Menjaga Jati Diri</title>
+<meta name="description" content="Sebuah perjalanan digital menyusuri sejarah, makna, dan masa depan maritim Indonesia — 23 September, Hari Maritim Nasional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   HARI MARITIM NASIONAL — PREMIUM CINEMATIC MARITIME EXPERIENCE
+   Palet: Ocean (navy/dark blue/midnight), Water (blue/cyan/turquoise),
+   Heritage (sand/beige/aged paper), Accent (muted gold), Text (off white)
+   ========================================================= */
+
+:root{
+  --navy-deep:    #050c14;
+  --navy:         #0a1826;
+  --navy-mid:     #12283a;
+  --midnight:     #071019;
+  --water:        #1e4d63;
+  --cyan:         #4fa3ad;
+  --turquoise:    #5fb8b0;
+  --sand:         #d8c7a1;
+  --beige:        #c9a24a;
+  --paper:        #efe6d3;
+  --gold:         #c9a24a;
+  --gold-soft:    #e8c877;
+  --off-white:    #f4f1ea;
+  --soft-white:   rgba(244,241,234,0.72);
+
+  --font-display: 'Fraunces', serif;
+  --font-body:    'Manrope', sans-serif;
+
+  --ease-cinema: cubic-bezier(.16,.8,.24,1);
+  --max: 1400px;
+
+  /* ============= BENTO TILE PRIMITIVES ============= */
+  --tile-bg:        rgba(18,40,58,.42);
+  --tile-bg-soft:   rgba(18,40,58,.28);
+  --tile-border:    rgba(244,241,234,.1);
+  --tile-border-hi: rgba(201,162,74,.4);
+  --tile-radius-lg: 2.2rem;
+  --tile-radius-md: 1.6rem;
+  --tile-radius-sm: 1.1rem;
+  --tile-shadow: 0 30px 60px -24px rgba(0,0,0,.55), inset 0 1px 0 rgba(244,241,234,.05);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; background:var(--navy-deep); }
+
+body{
+  margin:0;
+  background:var(--navy-deep);
+  color:var(--off-white);
+  font-family:var(--font-body);
+  font-weight:300;
+  overflow-x:hidden;
+  cursor:none;
+}
+@media (max-width:900px), (hover:none){
+  body{ cursor:auto; }
+}
+
+img,svg{ max-width:100%; display:block; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:var(--gold); color:var(--navy-deep); }
+
+.section{ position:relative; width:100%; min-height:100dvh; padding:min(16vh,140px) 7vw 100px; }
+.section::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.5; z-index:0;
+  background-image:radial-gradient(rgba(244,241,234,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 50%, #000 40%, transparent 90%);
+          mask-image:radial-gradient(ellipse 90% 70% at 50% 50%, #000 40%, transparent 90%);
+}
+.section > *{ position:relative; z-index:1; }
+
+/* ============= BENTO TILE PRIMITIVES ============= */
+.bento-grid{
+  display:grid; gap:clamp(14px,1.6vw,22px);
+  max-width:var(--max); margin:0 auto; width:100%;
+}
+.bento-tile{
+  background:var(--tile-bg); border:1px solid var(--tile-border);
+  border-radius:var(--tile-radius-lg); box-shadow:var(--tile-shadow);
+  padding:clamp(1.8rem,3.4vw,3rem); backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  transition:transform .5s var(--ease-cinema), border-color .5s var(--ease-cinema), background .5s var(--ease-cinema);
+}
+.bento-tile:hover{ border-color:var(--tile-border-hi); transform:translateY(-4px); }
+.bento-tile--soft{ background:var(--tile-bg-soft); }
+.bento-tile__eyebrow{ font-size:.68rem; letter-spacing:.24em; color:var(--gold-soft); margin:0 0 1em; text-transform:uppercase; }
+
+.eyebrow{
+  font-family:var(--font-body); text-transform:uppercase;
+  font-size:.78rem; letter-spacing:.32em; color:var(--gold-soft);
+  margin:0 0 1.4em;
+}
+.section-title{
+  font-family:var(--font-display); font-weight:500;
+  font-size:clamp(2.4rem,6vw,4.6rem); line-height:1.02;
+  letter-spacing:-.01em; margin:0 0 1em;
+}
+.btn{
+  display:inline-block; font-family:var(--font-body); font-weight:500;
+  text-transform:uppercase; letter-spacing:.14em; font-size:.82rem;
+  padding:18px 38px; border-radius:2px; position:relative;
+  transition:transform .35s var(--ease-cinema);
+}
+.btn--gold{ background:var(--gold); color:var(--navy-deep); }
+.btn--gold:hover{ transform:translateY(-3px); }
+.btn--outline{ border:1px solid rgba(244,241,234,.4); color:var(--off-white); background:transparent; }
+.btn--outline:hover{ border-color:var(--gold); color:var(--gold-soft); transform:translateY(-3px); }
+
+/* ============= REVEAL UTILITIES ============= */
+.reveal{ opacity:0; transform:translateY(34px); transition:opacity 1s var(--ease-cinema), transform 1s var(--ease-cinema); }
+.reveal.is-in{ opacity:1; transform:translateY(0); }
+.reveal-word{ opacity:0; transform:translateY(18px); transition:opacity .9s var(--ease-cinema), transform .9s var(--ease-cinema); }
+.reveal-word.is-in{ opacity:1; transform:translateY(0); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.2s !important; scroll-behavior:auto !important; }
+}
+
+/* =========================================================
+   CUSTOM CURSOR
+   ========================================================= */
+.cursor{
+  position:fixed; top:0; left:0; z-index:200; pointer-events:none;
+  transform:translate(-50%,-50%);
+  display:flex; align-items:center; justify-content:center;
+  transition:transform .15s ease-out;
+}
+.cursor__dot{
+  width:10px; height:10px; border-radius:50%;
+  border:1px solid var(--off-white); display:block;
+  transition:width .25s var(--ease-cinema), height .25s var(--ease-cinema), background .25s;
+}
+.cursor__label{
+  position:absolute; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--navy-deep); background:var(--gold); padding:2px 0; border-radius:50%;
+  width:0; height:0; overflow:hidden; display:flex; align-items:center; justify-content:center;
+  transition:width .3s var(--ease-cinema), height .3s var(--ease-cinema);
+  white-space:nowrap;
+}
+.cursor.is-active .cursor__dot{ width:64px; height:64px; background:transparent; border-color:var(--gold); }
+.cursor.is-active .cursor__label{ width:64px; height:64px; }
+@media (max-width:900px), (hover:none){ .cursor{ display:none; } }
+
+/* =========================================================
+   LOADING SCREEN
+   ========================================================= */
+.loader{
+  position:fixed; inset:0; z-index:500;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+  background:radial-gradient(ellipse at 50% 30%, var(--navy-mid) 0%, var(--navy-deep) 70%);
+  transition:opacity .8s var(--ease-cinema), visibility .8s;
+}
+.loader.is-done{ opacity:0; visibility:hidden; pointer-events:none; }
+.loader__ocean{
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(0deg, rgba(79,163,173,.04) 0 2px, transparent 2px 5px);
+  opacity:.5;
+}
+.loader__archive{
+  font-family:var(--font-display); font-size:clamp(1.1rem,3vw,1.7rem);
+  letter-spacing:.1em; color:var(--off-white); margin:0; z-index:1;
+}
+.loader__status{
+  font-size:.75rem; letter-spacing:.28em; color:var(--gold-soft); margin:0; z-index:1;
+}
+.loader__bar{
+  width:min(320px,60vw); height:1px; background:rgba(244,241,234,.2); z-index:1;
+}
+.loader__bar-fill{ height:100%; width:0%; background:var(--gold); transition:width .1s linear; }
+.loader__pct{ font-family:var(--font-display); font-size:.9rem; color:var(--soft-white); z-index:1; }
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:120;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:26px 6vw; mix-blend-mode:difference;
+}
+.nav__mark{ font-family:var(--font-display); font-size:1.05rem; letter-spacing:.06em; }
+.nav__mark span{ color:var(--soft-white); font-size:.85rem; }
+.nav__menu-btn{
+  font-size:.78rem; letter-spacing:.24em; text-transform:uppercase; min-height:44px;
+  display:flex; align-items:center; padding:0 6px;
+}
+
+.menu-overlay{
+  position:fixed; inset:0; z-index:150;
+  background:var(--navy-deep);
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+  padding:8vh 8vw;
+  transform:translateY(-100%);
+  transition:transform .6s var(--ease-cinema);
+}
+.menu-overlay.is-open{ transform:translateY(0); }
+.menu-overlay__list{ list-style:none; margin:0; padding:0; }
+.menu-overlay__list li{ margin:.35em 0; }
+.menu-overlay__list a{
+  font-family:var(--font-display); font-size:clamp(1.6rem,5.5vw,3.4rem);
+  color:var(--soft-white); transition:color .3s, transform .3s; display:inline-block;
+  letter-spacing:-.01em;
+}
+.menu-overlay__list a:hover{ color:var(--gold-soft); transform:translateX(14px); }
+.menu-overlay__close{
+  position:absolute; top:26px; right:6vw; font-size:.78rem; letter-spacing:.24em;
+  min-height:44px; display:flex; align-items:center;
+}
+
+/* =========================================================
+   SCROLL PROGRESS (kanan)
+   ========================================================= */
+.scroll-progress{
+  position:fixed; right:26px; top:50%; transform:translateY(-50%); z-index:100;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.scroll-progress__track{ width:2px; height:140px; background:rgba(244,241,234,.15); position:relative; }
+.scroll-progress__fill{ position:absolute; top:0; left:0; width:100%; height:0%; background:var(--gold); transition:height .1s linear; }
+.scroll-progress__num{ font-size:.68rem; letter-spacing:.14em; color:var(--soft-white); writing-mode:vertical-rl; }
+@media (max-width:760px){ .scroll-progress{ display:none; } }
+
+/* =========================================================
+   SOUND TOGGLE
+   ========================================================= */
+.sound-toggle{
+  position:fixed; left:26px; bottom:26px; z-index:100;
+  font-size:.68rem; letter-spacing:.18em; color:var(--soft-white);
+  border:1px solid rgba(244,241,234,.25); padding:10px 16px; border-radius:20px;
+  min-height:38px; transition:border-color .25s, color .25s;
+}
+.sound-toggle:hover{ border-color:var(--gold); color:var(--gold-soft); }
+.sound-toggle[aria-pressed="true"]{ border-color:var(--gold); color:var(--gold-soft); }
+
+/* =========================================================
+   01 — HERO
+   ========================================================= */
+.hero{
+  padding:0; display:flex; align-items:center; justify-content:center;
+  overflow:hidden; background:var(--navy-deep);
+}
+.hero__parallax{ position:absolute; inset:0; overflow:hidden; }
+.hero__layer{ position:absolute; inset:0; will-change:transform; }
+.hero__sky{ background:linear-gradient(180deg, #0c1c2c 0%, #1a3a4d 55%, #2c5a63 100%); }
+.hero__clouds{
+  background:radial-gradient(ellipse 300px 60px at 20% 22%, rgba(244,241,234,.06), transparent 70%),
+             radial-gradient(ellipse 260px 50px at 70% 15%, rgba(244,241,234,.05), transparent 70%);
+}
+.hero__horizon{
+  top:56%; height:3px; background:linear-gradient(90deg, transparent, rgba(232,200,119,.5), transparent);
+}
+.hero__ocean{
+  top:58%; background:linear-gradient(180deg, #1e4d63 0%, #0a2230 60%, #050f16 100%);
+  background-image:
+    repeating-linear-gradient(100deg, rgba(244,241,234,.03) 0 2px, transparent 2px 40px),
+    linear-gradient(180deg, #1e4d63 0%, #0a2230 60%, #050f16 100%);
+}
+.hero__ship{
+  top:52%; left:50%; width:min(240px,42vw); transform:translate(-50%,0);
+  animation:ship-bob 5s ease-in-out infinite;
+}
+.ship-svg{ filter:drop-shadow(0 12px 18px rgba(0,0,0,.5)); }
+@keyframes ship-bob{
+  0%,100%{ transform:translate(-50%,0) rotate(-.6deg); }
+  50%{ transform:translate(-50%,-8px) rotate(.6deg); }
+}
+.hero__particles{ pointer-events:none; }
+.hero__particles span{
+  position:absolute; width:2px; height:2px; border-radius:50%;
+  background:rgba(244,241,234,.5); animation:particle-float linear infinite;
+}
+@keyframes particle-float{
+  0%{ transform:translateY(0); opacity:0; }
+  10%{ opacity:.6; }
+  90%{ opacity:.3; }
+  100%{ transform:translateY(-140px); opacity:0; }
+}
+
+.hero__content{
+  position:relative; z-index:2; text-align:center; max-width:760px; padding:clamp(2.2rem,5vw,4rem) clamp(1.6rem,6vw,4rem);
+  background:rgba(5,12,20,.38); border:1px solid rgba(244,241,234,.14);
+  border-radius:var(--tile-radius-lg); box-shadow:var(--tile-shadow);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  margin:0 5vw;
+}
+.hero__eyebrow{ font-size:.78rem; letter-spacing:.36em; color:var(--gold-soft); margin:0 0 1.2em; }
+.hero__date{
+  font-family:var(--font-display); font-weight:500;
+  font-size:clamp(3.6rem,13vw,9rem); line-height:.9; margin:0;
+  color:var(--off-white); text-shadow:0 6px 40px rgba(0,0,0,.4);
+}
+.hero__sub{
+  font-size:.92rem; letter-spacing:.22em; color:var(--soft-white); margin:1em 0 .6em;
+}
+.hero__desc{
+  font-size:1rem; color:var(--soft-white); max-width:46ch; margin:0 auto 2.2em; line-height:1.6;
+}
+
+.hero__scrollcue{
+  position:absolute; bottom:38px; left:50%; transform:translateX(-50%); z-index:2;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.hero__scrollcue-line{
+  width:1px; height:44px; background:linear-gradient(to bottom, transparent, var(--gold-soft));
+  animation:cue-move 2.2s ease-in-out infinite;
+}
+@keyframes cue-move{ 0%,100%{ opacity:.3; } 50%{ opacity:1; } }
+.hero__scrollcue-text{ font-size:.66rem; letter-spacing:.28em; color:var(--soft-white); }
+
+/* =========================================================
+   MAP
+   ========================================================= */
+.map-section{ background:var(--navy); text-align:center; }
+.map-stage{
+  position:relative; max-width:1000px; margin:3rem auto 0;
+  background:radial-gradient(ellipse at center, rgba(30,77,99,.35), transparent 70%), var(--tile-bg);
+  border-radius:var(--tile-radius-lg); padding:40px; border:1px solid var(--tile-border);
+  box-shadow:var(--tile-shadow);
+}
+.map-stage__glow{
+  position:absolute; inset:0; pointer-events:none;
+  box-shadow:inset 0 0 120px rgba(79,163,173,.12);
+}
+.map-stage__particles span{
+  position:absolute; width:2px; height:2px; background:rgba(244,241,234,.4); border-radius:50%;
+  animation:particle-float 6s linear infinite;
+}
+.map-svg{ width:100%; height:auto; position:relative; z-index:1; }
+.map-route path{
+  fill:none; stroke:var(--gold-soft); stroke-width:1; stroke-dasharray:6 8; opacity:.4;
+  animation:route-dash 30s linear infinite;
+}
+@keyframes route-dash{ to{ stroke-dashoffset:-400; } }
+.map-point{
+  fill:var(--gold-soft); cursor:pointer; transition:r .25s var(--ease-cinema), opacity .25s;
+  filter:drop-shadow(0 0 6px rgba(201,162,74,.7));
+}
+.map-boat{
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.5));
+}
+.map-point:hover, .map-point:focus{ outline:none; }
+.map-tooltip{
+  position:absolute; top:-999px; left:-999px; pointer-events:none;
+  font-size:.66rem; letter-spacing:.18em; color:var(--navy-deep); background:var(--gold-soft);
+  padding:6px 12px; border-radius:2px; opacity:0; transition:opacity .2s; z-index:5; white-space:nowrap;
+}
+.map-tooltip.is-visible{ opacity:1; }
+
+/* =========================================================
+   02 — ABOUT
+   ========================================================= */
+.about{ background:var(--navy-deep); display:block; }
+.about__grid{ grid-template-columns:1fr 1.2fr; align-items:stretch; }
+.about__title-tile{ display:flex; align-items:center; }
+.about__title{
+  font-family:var(--font-display); font-weight:500; font-size:clamp(2.2rem,5.4vw,3.8rem);
+  line-height:1.05; margin:0;
+}
+.about__body p{ font-size:1.02rem; line-height:1.75; color:var(--soft-white); max-width:52ch; }
+.about__body b{ color:var(--off-white); }
+.about__pull{
+  font-family:var(--font-display); font-size:clamp(1.5rem,3.1vw,2.2rem); color:var(--gold-soft);
+  line-height:1.2; margin-top:.8em;
+}
+@media (max-width:900px){ .about__grid{ grid-template-columns:1fr; } }
+
+/* =========================================================
+   SOEKARNO QUOTE
+   ========================================================= */
+.quote{
+  background:var(--midnight); display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center; padding:100px 8vw;
+}
+.quote__tile{
+  max-width:960px; width:100%; background:var(--tile-bg); border:1px solid var(--tile-border);
+  border-radius:var(--tile-radius-lg); box-shadow:var(--tile-shadow); padding:clamp(2.4rem,6vw,4.6rem);
+}
+.quote__ocean{
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(0deg, rgba(79,163,173,.03) 0 2px, transparent 2px 6px);
+}
+.quote__text{ margin:0; max-width:900px; position:relative; z-index:1; }
+.quote__line{
+  display:block; font-family:var(--font-display); font-weight:300;
+  font-size:clamp(1.3rem,3.6vw,2.3rem); line-height:1.5; color:var(--off-white);
+  opacity:0; filter:blur(6px); transform:translateY(10px);
+  transition:opacity 1s var(--ease-cinema), filter 1s var(--ease-cinema), transform 1s var(--ease-cinema);
+}
+.quote__line.is-in{ opacity:1; filter:blur(0); transform:translateY(0); }
+.quote__cite{
+  display:block; margin-top:1.6em; font-style:normal; font-size:.85rem;
+  letter-spacing:.14em; color:var(--gold-soft); position:relative; z-index:1;
+}
+
+/* =========================================================
+   03 — THE DATE
+   ========================================================= */
+.date-section{ background:var(--navy); text-align:center; }
+.date-section__sub{ font-size:.85rem; letter-spacing:.24em; color:var(--soft-white); margin:0 0 3rem; }
+
+.date-compare{
+  display:grid; grid-template-columns:1fr auto 1fr; gap:1.4vw; align-items:stretch;
+  max-width:1200px; margin:0 auto 2.4rem; text-align:left;
+}
+.date-compare__side{
+  display:flex; flex-direction:column; gap:.8em; text-align:center; align-items:center;
+  justify-content:center; background:var(--tile-bg-soft); border:1px solid var(--tile-border);
+  border-radius:var(--tile-radius-md); box-shadow:var(--tile-shadow); padding:2.4rem 1.8rem;
+  transition:border-color .5s var(--ease-cinema), transform .5s var(--ease-cinema);
+}
+.date-compare__side:hover{ transform:translateY(-4px); }
+.date-compare__side--right{ border-color:var(--tile-border-hi); }
+.date-compare__num{
+  font-family:var(--font-display); font-weight:500; font-size:clamp(2.4rem,7vw,4.6rem);
+  line-height:.95; color:var(--off-white);
+}
+.date-compare__side--left .date-compare__num{ color:rgba(244,241,234,.55); }
+.date-compare__side--right .date-compare__num{ color:var(--gold-soft); }
+.date-compare__label{ font-size:.72rem; letter-spacing:.2em; color:var(--gold-soft); }
+.date-compare__side--left .date-compare__label{ color:var(--soft-white); }
+.date-compare__text{ font-size:.92rem; line-height:1.6; color:var(--soft-white); max-width:38ch; margin:0 auto; }
+
+.date-compare__compass{
+  position:relative; width:110px; color:var(--soft-white); justify-self:center; align-self:center;
+  background:var(--tile-bg); border:1px solid var(--tile-border); border-radius:50%;
+  padding:18px; box-shadow:var(--tile-shadow);
+}
+#compassNeedle{ transition:transform .3s var(--ease-cinema); }
+.date-compare__vs{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  font-family:var(--font-display); font-size:.85rem; letter-spacing:.1em; color:var(--gold-soft);
+  background:var(--navy); padding:2px 8px;
+}
+@media (max-width:800px){
+  .date-compare{ grid-template-columns:1fr; text-align:center; }
+  .date-compare__compass{ margin:0 auto; }
+}
+
+.date-slider{
+  display:flex; align-items:center; gap:20px; max-width:620px; margin:0 auto;
+  background:var(--tile-bg-soft); border:1px solid var(--tile-border); border-radius:var(--tile-radius-md);
+  padding:1.6rem 2rem; box-shadow:var(--tile-shadow);
+}
+.date-slider__end{ font-size:.66rem; letter-spacing:.14em; color:var(--soft-white); white-space:nowrap; }
+#dateRange{
+  -webkit-appearance:none; appearance:none; flex:1; height:2px; background:rgba(244,241,234,.25); outline:none;
+}
+#dateRange::-webkit-slider-thumb{
+  -webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:var(--gold);
+  cursor:pointer; box-shadow:0 0 12px rgba(201,162,74,.6);
+}
+#dateRange::-moz-range-thumb{
+  width:18px; height:18px; border-radius:50%; background:var(--gold); border:none; cursor:pointer;
+}
+.date-slider__result{
+  text-align:center; margin-top:1.4rem; font-family:var(--font-display); font-size:1.2rem;
+  letter-spacing:.06em; color:var(--gold-soft); transition:color .4s;
+}
+
+/* =========================================================
+   04 — TIMELINE
+   ========================================================= */
+.timeline-section{ background:var(--midnight); }
+.timeline-rail{ position:relative; max-width:1100px; margin:4rem auto 0; padding-left:40px; }
+.timeline-rail__track{ position:absolute; top:0; bottom:0; left:0; width:2px; background:rgba(244,241,234,.15); }
+.timeline-rail__track-fill{ width:100%; height:0%; background:var(--gold); transition:height .1s linear; }
+.timeline-rail__ship{
+  position:absolute; left:-9px; top:0; width:40px; transition:top .1s linear;
+}
+
+.timeline-item{
+  position:relative; margin:0 0 1.6rem 30px; max-width:640px;
+  background:var(--tile-bg-soft); border:1px solid var(--tile-border); border-radius:var(--tile-radius-md);
+  padding:1.8rem 2rem; box-shadow:var(--tile-shadow);
+  transition:opacity .5s var(--ease-cinema), border-color .5s var(--ease-cinema), transform .5s var(--ease-cinema);
+}
+.timeline-item::before{
+  content:""; position:absolute; left:-36px; top:1.8rem; width:10px; height:10px; border-radius:50%;
+  background:var(--navy); border:2px solid var(--gold-soft);
+}
+.timeline-item__year{
+  display:block; font-family:var(--font-display); font-weight:500; font-size:clamp(1.4rem,3.4vw,2.1rem);
+  color:var(--off-white); margin-bottom:.4em; opacity:.4; transition:opacity .5s var(--ease-cinema), color .5s;
+}
+.timeline-item__text{ font-size:.92rem; line-height:1.65; color:var(--soft-white); max-width:44ch; opacity:.4; transition:opacity .5s var(--ease-cinema); }
+.timeline-item.is-active{ border-color:var(--tile-border-hi); transform:translateX(6px); }
+.timeline-item.is-active .timeline-item__year{ opacity:1; color:var(--gold-soft); }
+.timeline-item.is-active .timeline-item__text{ opacity:1; }
+
+/* =========================================================
+   05 — WHY IT MATTERS
+   ========================================================= */
+.why{ background:var(--navy); }
+.why-grid{
+  display:grid; grid-template-columns:1.5fr 1fr; grid-template-rows:auto auto;
+  gap:clamp(14px,1.6vw,20px); max-width:1200px; margin:0 auto;
+}
+.why-item{
+  background:var(--tile-bg); text-align:left; padding:2.6rem 2.4rem; position:relative; overflow:hidden;
+  border:1px solid var(--tile-border); border-radius:var(--tile-radius-lg); box-shadow:var(--tile-shadow);
+  transition:background .4s var(--ease-cinema), border-color .4s var(--ease-cinema), transform .4s var(--ease-cinema);
+}
+.why-item:hover{ background:var(--navy-mid); border-color:var(--tile-border-hi); transform:translateY(-4px); }
+.why-item[data-index="0"]{ grid-column:1; grid-row:1 / span 2; display:flex; flex-direction:column; justify-content:center; padding:3.2rem 2.8rem; }
+.why-item[data-index="1"]{ grid-column:2; grid-row:1; }
+.why-item[data-index="2"]{ grid-column:2; grid-row:2; }
+.why-item[data-index="3"]{ grid-column:1 / span 2; grid-row:3; }
+.why-item__num{ font-family:var(--font-display); font-size:1rem; color:var(--gold-soft); display:block; margin-bottom:1.2em; }
+.why-item h3{
+  font-family:var(--font-display); font-weight:500; font-size:clamp(1.3rem,2.6vw,1.8rem);
+  margin:0 0 .5em; transition:transform .4s var(--ease-cinema);
+}
+.why-item:hover h3{ transform:translateX(8px); }
+.why-item p{ font-size:.9rem; line-height:1.6; color:var(--soft-white); margin:0; max-width:40ch; }
+@media (max-width:800px){
+  .why-grid{ grid-template-columns:1fr; }
+  .why-item[data-index="0"], .why-item[data-index="1"], .why-item[data-index="2"], .why-item[data-index="3"]{
+    grid-column:1; grid-row:auto;
+  }
+}
+
+.why-overlay{
+  position:fixed; inset:0; z-index:180; background:var(--navy-deep);
+  display:flex; flex-direction:column; justify-content:center; padding:8vh 8vw;
+  transform:translateY(100%); transition:transform .5s var(--ease-cinema);
+}
+.why-overlay.is-open{ transform:translateY(0); }
+.why-overlay__close{ position:absolute; top:26px; right:6vw; font-size:.78rem; letter-spacing:.24em; min-height:44px; }
+.why-overlay__num{ font-family:var(--font-display); font-size:1.2rem; color:var(--gold-soft); margin-bottom:.6em; }
+.why-overlay__title{ font-family:var(--font-display); font-weight:500; font-size:clamp(2rem,6vw,4rem); margin:0 0 .5em; max-width:16ch; }
+.why-overlay__text{ font-size:1.1rem; line-height:1.7; color:var(--soft-white); max-width:50ch; }
+
+/* =========================================================
+   06 — FIVE PILLARS
+   ========================================================= */
+.pillars{ background:var(--midnight); display:flex; flex-direction:column; align-items:center; }
+.pillars-grid{
+  display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(14px,1.8vw,24px);
+  align-items:stretch; max-width:1100px; margin:0 auto; width:100%;
+}
+.pillars-tile{
+  background:var(--tile-bg); border:1px solid var(--tile-border); border-radius:var(--tile-radius-lg);
+  box-shadow:var(--tile-shadow); padding:clamp(1.8rem,3vw,2.8rem);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+@media (max-width:800px){ .pillars-grid{ grid-template-columns:1fr; } }
+.pillars-compass{
+  --compass-d: min(420px,80vw);
+  position:relative; width:var(--compass-d); aspect-ratio:1; margin:2rem auto;
+}
+.pillars-compass__center{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  font-family:var(--font-display); font-size:1rem; letter-spacing:.1em; color:var(--gold-soft);
+  width:110px; height:110px; border:1px solid rgba(201,162,74,.4); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+}
+.pillars-compass__ring{
+  position:absolute; inset:0; border:1px solid rgba(244,241,234,.15); border-radius:50%;
+  transition:transform .6s var(--ease-cinema);
+}
+.pillars-compass__node{
+  position:absolute; top:50%; left:50%; margin:-23px 0 0 -23px;
+  transform:rotate(var(--a)) translate(0, calc(-1 * var(--compass-d) / 2)) rotate(calc(-1 * var(--a)));
+  width:46px; height:46px; border-radius:50%; background:var(--navy);
+  border:1px solid rgba(244,241,234,.25); color:var(--soft-white);
+  display:flex; align-items:center; justify-content:center; font-size:.85rem;
+  transition:background .3s, border-color .3s, color .3s;
+}
+.pillars-compass__node.is-active{ background:var(--gold); color:var(--navy-deep); border-color:var(--gold); }
+@media (max-width:520px){
+  .pillars-compass__node{ width:38px; height:38px; font-size:.75rem; margin:-19px 0 0 -19px; }
+  .pillars-compass__center{ width:88px; height:88px; font-size:.85rem; }
+}
+
+.pillars-desc{ text-align:center; max-width:520px; }
+.pillars-desc__count{ font-size:.72rem; letter-spacing:.2em; color:var(--gold-soft); }
+.pillars-desc__title{ font-family:var(--font-display); font-weight:500; font-size:clamp(1.6rem,3.6vw,2.4rem); margin:.5em 0; }
+.pillars-desc__text{ font-size:.98rem; line-height:1.65; color:var(--soft-white); }
+.pillars-desc__nav{ display:flex; justify-content:center; gap:16px; margin-top:1.6rem; }
+.pillars-desc__nav button{
+  width:44px; height:44px; border-radius:50%; border:1px solid rgba(244,241,234,.25);
+  font-size:1rem; transition:border-color .25s, color .25s;
+}
+.pillars-desc__nav button:hover{ border-color:var(--gold); color:var(--gold-soft); }
+
+/* =========================================================
+   07 — THE FUTURE
+   ========================================================= */
+.future{
+  background:linear-gradient(180deg, #0a1c2c 0%, #14313f 55%, #1e4d47 100%);
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  overflow:hidden;
+}
+.future__ocean{
+  position:absolute; inset:0;
+  background-image:repeating-linear-gradient(95deg, rgba(244,241,234,.025) 0 2px, transparent 2px 46px);
+}
+.future__ship{
+  position:absolute; bottom:32%; left:50%; width:160px;
+  transition:transform 2.6s var(--ease-cinema), opacity 2.6s var(--ease-cinema);
+}
+.future__map{
+  position:absolute; top:8%; left:50%; transform:translate(-50%,-20px); width:220px; height:120px;
+  opacity:0; transition:opacity 1.4s var(--ease-cinema), transform 1.4s var(--ease-cinema);
+  background:radial-gradient(ellipse at center, rgba(201,162,74,.18), transparent 70%);
+}
+.future__map.is-visible{ opacity:1; transform:translate(-50%,0); }
+.future__content{
+  position:relative; z-index:2; max-width:640px;
+  background:rgba(5,12,20,.4); border:1px solid rgba(244,241,234,.14);
+  border-radius:var(--tile-radius-lg); box-shadow:var(--tile-shadow);
+  padding:clamp(2.2rem,5vw,3.6rem); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.future__kicker{ font-size:.78rem; letter-spacing:.3em; color:var(--gold-soft); margin:0 0 1.2em; }
+.future__copy{ font-family:var(--font-display); font-size:clamp(1.2rem,3vw,1.7rem); line-height:1.5; color:var(--off-white); margin:0 0 1.6em; }
+.future__date{ font-family:var(--font-display); font-weight:500; font-size:clamp(2rem,6vw,3.4rem); margin:0; color:var(--off-white); }
+.future__title{ font-size:.82rem; letter-spacing:.2em; color:var(--soft-white); margin:.6em 0 2em; }
+
+/* =========================================================
+   RESPONSIVE — SMALLER DEVICES
+   ========================================================= */
+@media (max-width:760px){
+  .section{ padding:110px 6vw 80px; }
+  .nav{ padding:20px 6vw; }
+  .why-item{ padding:2.2rem 1.6rem; }
+  .why-item[data-index="0"]{ padding:2.4rem 1.8rem; }
+  .bento-tile{ padding:1.6rem 1.4rem; }
+  .date-compare{ gap:14px; }
+  .date-compare__side{ padding:1.8rem 1.2rem; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ CUSTOM CURSOR (desktop) ============ -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor__dot"></span>
+  <span class="cursor__label" id="cursorLabel"></span>
+</div>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__ocean"></div>
+  <p class="loader__archive">INDONESIA MARITIME ARCHIVE</p>
+  <p class="loader__status" id="loaderStatus">LOADING EXPERIENCE&hellip;</p>
+  <div class="loader__bar"><div class="loader__bar-fill" id="loaderFill"></div></div>
+  <p class="loader__pct" id="loaderPct">0%</p>
+</div>
+
+<!-- ============ NAVIGASI ============ -->
+<header class="nav" id="nav">
+  <div class="nav__mark">HMN <span>/ 2026</span></div>
+  <button class="nav__menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuOverlay">
+    <span>MENU</span>
+  </button>
+</header>
+
+<nav class="menu-overlay" id="menuOverlay" aria-hidden="true">
+  <ol class="menu-overlay__list">
+    <li><a href="#hero" data-num="01">01 — HOME</a></li>
+    <li><a href="#about" data-num="02">02 — ABOUT</a></li>
+    <li><a href="#the-date" data-num="03">03 — THE DATE</a></li>
+    <li><a href="#timeline" data-num="04">04 — TIMELINE</a></li>
+    <li><a href="#why" data-num="05">05 — WHY IT MATTERS</a></li>
+    <li><a href="#pillars" data-num="06">06 — FIVE PILLARS</a></li>
+    <li><a href="#future" data-num="07">07 — THE FUTURE</a></li>
+  </ol>
+  <button class="menu-overlay__close" id="menuClose" aria-label="Tutup menu">CLOSE</button>
+</nav>
+
+<!-- ============ PROGRESS SISI KANAN ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true">
+  <div class="scroll-progress__track">
+    <div class="scroll-progress__fill" id="progressFill"></div>
+  </div>
+  <span class="scroll-progress__num" id="progressNum">01/07</span>
+</div>
+
+<!-- ============ SOUND TOGGLE ============ -->
+<button class="sound-toggle" id="soundToggle" aria-pressed="false">
+  <span id="soundLabel">SOUND OFF</span>
+</button>
+
+<main id="main">
+
+<!-- ============ 01 HERO ============ -->
+<section class="section hero" id="hero" data-section="01">
+  <div class="hero__parallax" id="heroParallax">
+    <div class="hero__layer hero__sky"></div>
+    <div class="hero__layer hero__clouds"></div>
+    <div class="hero__layer hero__horizon"></div>
+    <div class="hero__layer hero__ocean"></div>
+    <div class="hero__layer hero__ship">
+      <svg viewBox="0 0 220 120" class="ship-svg" aria-hidden="true">
+        <path d="M20 78 L200 78 L182 100 L38 100 Z" fill="#1c2b33"/>
+        <rect x="70" y="30" width="8" height="48" fill="#0e161b"/>
+        <path d="M78 32 L128 32 L112 58 L78 58 Z" fill="#c9a24a" opacity="0.85"/>
+        <path d="M78 34 L104 34 L96 56 L78 56 Z" fill="#e8c877" opacity="0.6"/>
+        <rect x="140" y="52" width="26" height="26" fill="#16232a"/>
+      </svg>
+    </div>
+    <div class="hero__layer hero__particles" id="heroParticles"></div>
+  </div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow reveal-word">HARI MARITIM NASIONAL</p>
+    <h1 class="hero__date reveal-word">23 SEPTEMBER</h1>
+    <p class="hero__sub reveal-word">MENJAGA LAUT, MENJAGA JATI DIRI</p>
+    <p class="hero__desc reveal-word">Sebuah perjalanan menyusuri sejarah, makna, dan masa depan maritim Indonesia.</p>
+    <a href="#about" class="btn btn--gold" data-cursor="EXPLORE">BEGIN THE JOURNEY</a>
+  </div>
+
+  <div class="hero__scrollcue">
+    <span class="hero__scrollcue-line"></span>
+    <span class="hero__scrollcue-text">SCROLL TO SAIL</span>
+  </div>
+</section>
+
+<!-- ============ MAP — INDONESIA IS AN OCEAN NATION ============ -->
+<section class="section map-section" id="map" data-section="01">
+  <p class="eyebrow reveal">GEOGRAFI</p>
+  <h2 class="section-title reveal">INDONESIA IS<br>AN OCEAN NATION</h2>
+
+  <div class="map-stage reveal">
+    <div class="map-stage__glow" aria-hidden="true"></div>
+    <div class="map-stage__particles" id="mapParticles" aria-hidden="true"></div>
+    <svg viewBox="0 0 900 320" class="map-svg" id="mapSvg" role="img" aria-label="Peta kepulauan Indonesia bergaya artistik">
+      <g class="map-route" aria-hidden="true">
+        <path id="mapRoutePath" d="M40,200 C200,140 300,240 460,180 S700,120 860,190" />
+      </g>
+      <g class="map-boat" id="mapBoat" aria-hidden="true">
+        <path d="M-9,3 L9,3 L6,7 L-6,7 Z" fill="#e8c877"/>
+        <rect x="-1" y="-9" width="2" height="12" fill="#0a1826"/>
+        <path d="M1,-8 L9,-2 L1,2 Z" fill="#c9a24a"/>
+      </g>
+      <g class="map-islands" fill="#c9a24a" opacity="0.55">
+        <ellipse cx="90" cy="210" rx="60" ry="14"/>
+        <ellipse cx="230" cy="180" rx="90" ry="16"/>
+        <ellipse cx="400" cy="230" rx="70" ry="13"/>
+        <ellipse cx="520" cy="170" rx="55" ry="12"/>
+        <ellipse cx="650" cy="205" rx="100" ry="15"/>
+        <ellipse cx="800" cy="175" rx="65" ry="12"/>
+      </g>
+      <g class="map-points">
+        <circle class="map-point" cx="90" cy="205" r="6" tabindex="0" data-label="A MARITIME JOURNEY"></circle>
+        <circle class="map-point" cx="235" cy="174" r="6" tabindex="0" data-label="A MARITIME JOURNEY"></circle>
+        <circle class="map-point" cx="405" cy="224" r="6" tabindex="0" data-label="A MARITIME JOURNEY"></circle>
+        <circle class="map-point" cx="522" cy="164" r="6" tabindex="0" data-label="A MARITIME JOURNEY"></circle>
+        <circle class="map-point" cx="655" cy="199" r="6" tabindex="0" data-label="A MARITIME JOURNEY"></circle>
+        <circle class="map-point" cx="802" cy="169" r="6" tabindex="0" data-label="A MARITIME JOURNEY"></circle>
+      </g>
+    </svg>
+    <div class="map-tooltip" id="mapTooltip">A MARITIME JOURNEY</div>
+  </div>
+</section>
+
+<!-- ============ 02 ABOUT / INTRODUCTION ============ -->
+<section class="section about" id="about" data-section="02">
+  <p class="eyebrow reveal">02 / ARSIP</p>
+  <div class="bento-grid about__grid reveal">
+    <div class="bento-tile about__title-tile">
+      <h2 class="about__title">APA ITU<br>HARI MARITIM<br>NASIONAL?</h2>
+    </div>
+    <div class="bento-tile bento-tile--soft about__body">
+      <p>Hari Maritim Nasional merupakan momen tahunan untuk <b>memperingati</b>, <b>merenungkan</b>, dan
+      membangkitkan kembali kesadaran masyarakat terhadap potensi besar laut Indonesia.</p>
+      <p>Serta mengukuhkan komitmen untuk mewujudkan&nbsp;&mdash;</p>
+      <p class="about__pull">INDONESIA SEBAGAI<br>POROS MARITIM DUNIA</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOEKARNO QUOTE ============ -->
+<section class="section quote" id="quote" data-section="02">
+  <div class="quote__ocean" aria-hidden="true"></div>
+  <div class="quote__tile">
+    <blockquote class="quote__text" id="quoteText">
+      <span class="quote__line">Usahakanlah agar kita menjadi bangsa pelaut kembali.</span>
+      <span class="quote__line">Bangsa pelaut dalam arti kata cakrawala samudera.</span>
+      <span class="quote__line">Bangsa pelaut yang mempunyai armada niaga,</span>
+      <span class="quote__line">bangsa pelaut yang mempunyai armada militer&hellip;</span>
+    </blockquote>
+    <cite class="quote__cite">&mdash; Ir. Soekarno</cite>
+  </div>
+</section>
+
+<!-- ============ 03 THE DATE MATTERS ============ -->
+<section class="section date-section" id="the-date" data-section="03">
+  <p class="eyebrow reveal">03 / VERIFIKASI</p>
+  <h2 class="section-title reveal">THE DATE MATTERS</h2>
+  <p class="date-section__sub reveal">21 AGUSTUS OR 23 SEPTEMBER?</p>
+
+  <div class="date-compare reveal" id="dateCompare">
+    <div class="date-compare__side date-compare__side--left">
+      <span class="date-compare__num">21<br>AGUSTUS</span>
+      <span class="date-compare__label">VERSI SEJARAH ANGKATAN LAUT</span>
+      <p class="date-compare__text">Merujuk pada peristiwa heroik tahun 1945 saat para pelaut Indonesia berhasil merebut dan menguasai pangkalan armada laut dari militer Jepang. Walaupun bernilai sejarah tinggi, tanggal ini tidak tercantum dalam SK resmi.</p>
+    </div>
+
+    <div class="date-compare__compass" aria-hidden="true">
+      <svg viewBox="0 0 100 100" id="compassSvg">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+        <g id="compassNeedle" style="transform-origin:50px 50px;">
+          <path d="M50 10 L56 50 L50 90 L44 50 Z" fill="#c9a24a"/>
+        </g>
+      </svg>
+      <span class="date-compare__vs">VS</span>
+    </div>
+
+    <div class="date-compare__side date-compare__side--right">
+      <span class="date-compare__num">23<br>SEPTEMBER</span>
+      <span class="date-compare__label">RESMI &amp; SAH</span>
+      <p class="date-compare__text">Berdasarkan Surat Keputusan Presiden RI No. 249 Tahun 1964 yang dikeluarkan oleh Presiden Soekarno. Tanggal ini merupakan tanggal resmi yang diakui pemerintah.</p>
+    </div>
+  </div>
+
+  <div class="date-slider reveal">
+    <span class="date-slider__end">21 AUGUST</span>
+    <input type="range" min="0" max="100" value="0" id="dateRange" aria-label="Geser antara 21 Agustus dan 23 September">
+    <span class="date-slider__end">23 SEPTEMBER</span>
+  </div>
+  <p class="date-slider__result" id="dateResult">HISTORICAL MEMORY</p>
+</section>
+
+<!-- ============ 04 TIMELINE ============ -->
+<section class="section timeline-section" id="timeline" data-section="04">
+  <p class="eyebrow reveal">04 / PELAYARAN</p>
+  <h2 class="section-title reveal">A JOURNEY<br>THROUGH TIME</h2>
+
+  <div class="timeline-rail" id="timelineRail">
+    <div class="timeline-rail__ship" id="railShip">
+      <svg viewBox="0 0 60 34" aria-hidden="true"><path d="M4 22 L56 22 L50 30 L10 30 Z" fill="#c9a24a"/><rect x="26" y="6" width="3" height="16" fill="#1c2b33"/><path d="M29 8 L42 8 L36 20 L29 20 Z" fill="#1c2b33"/></svg>
+    </div>
+    <div class="timeline-rail__track"><div class="timeline-rail__track-fill" id="railFill"></div></div>
+
+    <div class="timeline-item" data-index="0">
+      <span class="timeline-item__year">ABAD KE-9</span>
+      <p class="timeline-item__text">Masa kejayaan kerajaan maritim Nusantara seperti Sriwijaya dan Majapahit sebagai pusat perdagangan jalur laut dunia.</p>
+    </div>
+    <div class="timeline-item" data-index="1">
+      <span class="timeline-item__year">21 AGUSTUS 1945</span>
+      <p class="timeline-item__text">Aksi heroik pemuda bahari merebut pangkalan laut bentukan Jepang.</p>
+    </div>
+    <div class="timeline-item" data-index="2">
+      <span class="timeline-item__year">23 SEPTEMBER 1953</span>
+      <p class="timeline-item__text">Presiden Soekarno meresmikan kekuatan awal Angkatan Laut Indonesia.</p>
+    </div>
+    <div class="timeline-item" data-index="3">
+      <span class="timeline-item__year">13 DESEMBER 1957</span>
+      <p class="timeline-item__text">Pencetusan Deklarasi Djuanda.</p>
+    </div>
+    <div class="timeline-item" data-index="4">
+      <span class="timeline-item__year">23 SEPTEMBER 1963</span>
+      <p class="timeline-item__text">Musyawarah Nasional Maritim I digelar di Tugu Tani, Jakarta.</p>
+    </div>
+    <div class="timeline-item" data-index="5">
+      <span class="timeline-item__year">1964</span>
+      <p class="timeline-item__text">Penerbitan SK Presiden No. 249/1964 yang resmi menetapkan 23 September sebagai Hari Maritim Nasional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 WHY IT MATTERS ============ -->
+<section class="section why" id="why" data-section="05">
+  <p class="eyebrow reveal">05 / MAKNA</p>
+  <h2 class="section-title reveal">WHY THE<br>SEA MATTERS</h2>
+
+  <div class="why-grid">
+    <button class="why-item reveal" data-index="0">
+      <span class="why-item__num">01</span>
+      <h3>BUDAYA BAHARI</h3>
+      <p>Mengikis mentalitas berbasis daratan dan mengembalikan jati diri asli Indonesia sebagai pelaut tangguh.</p>
+    </button>
+    <button class="why-item reveal" data-index="1">
+      <span class="why-item__num">02</span>
+      <h3>EKONOMI LAUT BERKELANJUTAN</h3>
+      <p>Optimalisasi potensi perikanan, energi bawah laut, dan industri pariwisata bahari global.</p>
+    </button>
+    <button class="why-item reveal" data-index="2">
+      <span class="why-item__num">03</span>
+      <h3>KEDAULATAN &amp; PERTAHANAN</h3>
+      <p>Meningkatkan kepedulian atas pengamanan batas wilayah laut dari ancaman ilegal atau klaim asing.</p>
+    </button>
+    <button class="why-item reveal" data-index="3">
+      <span class="why-item__num">04</span>
+      <h3>KONEKTIVITAS ANTARPULAU</h3>
+      <p>Mendorong percepatan infrastruktur tol laut demi pemerataan logistik nasional.</p>
+    </button>
+  </div>
+</section>
+
+<div class="why-overlay" id="whyOverlay" aria-hidden="true">
+  <button class="why-overlay__close" id="whyClose" aria-label="Tutup">CLOSE</button>
+  <span class="why-overlay__num" id="whyOverlayNum">01</span>
+  <h3 class="why-overlay__title" id="whyOverlayTitle">&mdash;</h3>
+  <p class="why-overlay__text" id="whyOverlayText">&mdash;</p>
+</div>
+
+<!-- ============ 06 FIVE PILLARS ============ -->
+<section class="section pillars" id="pillars" data-section="06">
+  <p class="eyebrow reveal">06 / VISI</p>
+  <h2 class="section-title reveal">FIVE PILLARS<br>POROS MARITIM DUNIA</h2>
+
+  <div class="pillars-grid reveal">
+    <div class="pillars-tile">
+      <div class="pillars-compass" id="pillarsCompass">
+        <div class="pillars-compass__center">INDONESIA</div>
+        <div class="pillars-compass__ring" id="pillarsRing">
+          <button class="pillars-compass__node" style="--a:0deg" data-index="0">01</button>
+          <button class="pillars-compass__node" style="--a:72deg" data-index="1">02</button>
+          <button class="pillars-compass__node" style="--a:144deg" data-index="2">03</button>
+          <button class="pillars-compass__node" style="--a:216deg" data-index="3">04</button>
+          <button class="pillars-compass__node" style="--a:288deg" data-index="4">05</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars-tile">
+      <div class="pillars-desc">
+        <span class="pillars-desc__count" id="pillarCount">01 / 05</span>
+        <h3 class="pillars-desc__title" id="pillarTitle">BUDAYA MARITIM</h3>
+        <p class="pillars-desc__text" id="pillarText">Rekonstruksi identitas masyarakat Indonesia yang sadar akan pentingnya laut.</p>
+        <div class="pillars-desc__nav">
+          <button id="pillarPrev" aria-label="Pilar sebelumnya">&larr;</button>
+          <button id="pillarNext" aria-label="Pilar berikutnya">&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 THE FUTURE ============ -->
+<section class="section future" id="future" data-section="07">
+  <div class="future__ocean" aria-hidden="true"></div>
+  <div class="future__ship" id="futureShip">
+    <svg viewBox="0 0 220 120" aria-hidden="true">
+      <path d="M20 78 L200 78 L182 100 L38 100 Z" fill="#0e161b"/>
+      <rect x="70" y="30" width="8" height="48" fill="#0a1116"/>
+      <path d="M78 32 L128 32 L112 58 L78 58 Z" fill="#c9a24a" opacity="0.75"/>
+    </svg>
+  </div>
+  <div class="future__map" id="futureMap" aria-hidden="true"></div>
+
+  <div class="future__content">
+    <p class="future__kicker reveal">THE JOURNEY CONTINUES</p>
+    <p class="future__copy reveal">Laut bukan hanya ruang yang memisahkan pulau.<br>Laut adalah bagian dari perjalanan Indonesia.</p>
+    <p class="future__date reveal">23 SEPTEMBER</p>
+    <p class="future__title reveal">HARI MARITIM NASIONAL INDONESIA</p>
+    <button class="btn btn--outline reveal" id="replayBtn" data-cursor="REPLAY">REPLAY JOURNEY</button>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* =========================================================
+   HARI MARITIM NASIONAL — INTERAKSI
+   Struktur: setiap bagian dipisah per fungsi sesuai arsitektur
+   ========================================================= */
+(function () {
+  "use strict";
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isTouch = window.matchMedia("(hover: none)").matches || window.innerWidth < 900;
+
+  /* =======================================================
+     LOADING SCREEN
+     ======================================================= */
+  function initLoader() {
+    const loader = document.getElementById("loader");
+    const fill = document.getElementById("loaderFill");
+    const pct = document.getElementById("loaderPct");
+    if (!loader) return;
+
+    let progress = 0;
+    const duration = 2400; // ms, sesuai batas 2-3 detik
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed = now - start;
+      progress = Math.min(100, Math.round((elapsed / duration) * 100));
+      fill.style.width = progress + "%";
+      pct.textContent = progress + "%";
+      if (elapsed < duration) {
+        requestAnimationFrame(tick);
+      } else {
+        window.setTimeout(() => {
+          loader.classList.add("is-done");
+          document.body.style.overflow = "";
+        }, 200);
+      }
+    }
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(tick);
+  }
+
+  /* =======================================================
+     NAVIGATION (menu overlay + progress indicator)
+     ======================================================= */
+  function initNavigation() {
+    const menuBtn = document.getElementById("menuBtn");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const menuClose = document.getElementById("menuClose");
+    const menuLinks = menuOverlay.querySelectorAll("a");
+
+    function openMenu() {
+      menuOverlay.classList.add("is-open");
+      menuOverlay.setAttribute("aria-hidden", "false");
+      menuBtn.setAttribute("aria-expanded", "true");
+    }
+    function closeMenu() {
+      menuOverlay.classList.remove("is-open");
+      menuOverlay.setAttribute("aria-hidden", "true");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }
+    menuBtn.addEventListener("click", () => {
+      const isOpen = menuOverlay.classList.contains("is-open");
+      isOpen ? closeMenu() : openMenu();
+    });
+    menuClose.addEventListener("click", closeMenu);
+    menuLinks.forEach((a) => a.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  }
+
+  /* =======================================================
+     SCROLL PROGRESS (bar kanan + nomor section aktif)
+     ======================================================= */
+  function initScrollProgress() {
+    const fill = document.getElementById("progressFill");
+    const num = document.getElementById("progressNum");
+    const sections = Array.from(document.querySelectorAll(".section[data-section]"));
+    if (!fill || sections.length === 0) return;
+
+    function onScroll() {
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY;
+      const max = doc.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? scrollTop / max : 0;
+      fill.style.height = Math.min(100, ratio * 100) + "%";
+
+      let current = "01";
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+          current = sec.getAttribute("data-section");
+        }
+      });
+      num.textContent = current + "/07";
+    }
+    document.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* =======================================================
+     CUSTOM CURSOR
+     ======================================================= */
+  function initCursor() {
+    if (isTouch) return;
+    const cursor = document.getElementById("cursor");
+    const label = document.getElementById("cursorLabel");
+    if (!cursor) return;
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%,-50%)`;
+    });
+
+    const interactiveEls = document.querySelectorAll("a, button, .map-point, [data-cursor]");
+    interactiveEls.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("is-active");
+        label.textContent = el.getAttribute("data-cursor") || "VIEW";
+      });
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("is-active");
+        label.textContent = "";
+      });
+    });
+  }
+
+  /* =======================================================
+     HERO ANIMATION (parallax layers + particles + word reveal)
+     ======================================================= */
+  function initHero() {
+    const parallax = document.getElementById("heroParallax");
+    const particlesWrap = document.getElementById("heroParticles");
+    const words = document.querySelectorAll(".hero__content .reveal-word");
+
+    // staggered reveal saat load
+    words.forEach((w, i) => {
+      window.setTimeout(() => w.classList.add("is-in"), 2600 + i * 160);
+    });
+
+    // partikel ambang laut
+    if (particlesWrap && !reduceMotion) {
+      for (let i = 0; i < 22; i++) {
+        const p = document.createElement("span");
+        p.style.left = Math.random() * 100 + "%";
+        p.style.bottom = Math.random() * 30 + "%";
+        p.style.animationDuration = 6 + Math.random() * 8 + "s";
+        p.style.animationDelay = Math.random() * 6 + "s";
+        particlesWrap.appendChild(p);
+      }
+    }
+
+    if (reduceMotion || isTouch) return;
+
+    function onScroll() {
+      const hero = document.getElementById("hero");
+      const rect = hero.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, -rect.top / window.innerHeight));
+
+      const layers = parallax.querySelectorAll(".hero__layer");
+      layers.forEach((layer, i) => {
+        const speed = (i + 1) * 14;
+        layer.style.transform = `translateY(${progress * speed}px)`;
+      });
+    }
+    document.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* =======================================================
+     INTERACTIVE MAP
+     ======================================================= */
+  function initMap() {
+    const points = document.querySelectorAll(".map-point");
+    const tooltip = document.getElementById("mapTooltip");
+    const stage = document.querySelector(".map-stage");
+    const particlesWrap = document.getElementById("mapParticles");
+    if (!points.length || !tooltip || !stage) return;
+
+    if (particlesWrap && !reduceMotion) {
+      for (let i = 0; i < 16; i++) {
+        const p = document.createElement("span");
+        p.style.left = Math.random() * 100 + "%";
+        p.style.bottom = Math.random() * 20 + "%";
+        p.style.animationDuration = 5 + Math.random() * 7 + "s";
+        p.style.animationDelay = Math.random() * 5 + "s";
+        particlesWrap.appendChild(p);
+      }
+    }
+
+    function showTooltip(target) {
+      const stageRect = stage.getBoundingClientRect();
+      const svgRect = target.ownerSVGElement.getBoundingClientRect();
+      const cx = parseFloat(target.getAttribute("cx"));
+      const cy = parseFloat(target.getAttribute("cy"));
+      const viewBox = target.ownerSVGElement.viewBox.baseVal;
+      const relX = (cx / viewBox.width) * svgRect.width;
+      const relY = (cy / viewBox.height) * svgRect.height;
+
+      tooltip.textContent = target.getAttribute("data-label") || "A MARITIME JOURNEY";
+      tooltip.style.left = (svgRect.left - stageRect.left + relX) + "px";
+      tooltip.style.top = (svgRect.top - stageRect.top + relY - 34) + "px";
+      tooltip.classList.add("is-visible");
+      target.setAttribute("r", "9");
+    }
+    function hideTooltip(target) {
+      tooltip.classList.remove("is-visible");
+      target.setAttribute("r", "6");
+    }
+
+    points.forEach((pt) => {
+      pt.addEventListener("mouseenter", () => showTooltip(pt));
+      pt.addEventListener("mouseleave", () => hideTooltip(pt));
+      pt.addEventListener("focus", () => showTooltip(pt));
+      pt.addEventListener("blur", () => hideTooltip(pt));
+      pt.addEventListener("click", () => showTooltip(pt));
+    });
+
+    // perahu berlayar mengikuti jalur rute laut
+    const routePath = document.getElementById("mapRoutePath");
+    const boat = document.getElementById("mapBoat");
+    if (routePath && boat) {
+      const totalLength = routePath.getTotalLength();
+      const durationMs = 16000;
+
+      if (reduceMotion) {
+        const mid = routePath.getPointAtLength(totalLength * 0.5);
+        boat.setAttribute("transform", `translate(${mid.x},${mid.y})`);
+      } else {
+        const animateBoat = (timestamp) => {
+          const t = (timestamp % durationMs) / durationMs;
+          const dist = t * totalLength;
+          const point = routePath.getPointAtLength(dist);
+          const ahead = routePath.getPointAtLength(Math.min(totalLength, dist + 1));
+          const angle = Math.atan2(ahead.y - point.y, ahead.x - point.x) * (180 / Math.PI);
+          boat.setAttribute("transform", `translate(${point.x},${point.y}) rotate(${angle})`);
+          requestAnimationFrame(animateBoat);
+        };
+        requestAnimationFrame(animateBoat);
+      }
+    }
+  }
+
+  /* =======================================================
+     SCROLL REVEAL (generic + quote text mask reveal)
+     ======================================================= */
+  function initScrollReveal() {
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16 }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+
+    // Soekarno quote — reveal per baris
+    const quoteLines = document.querySelectorAll(".quote__line");
+    const quoteObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            quoteLines.forEach((line, i) => {
+              window.setTimeout(() => line.classList.add("is-in"), i * 500);
+            });
+            quoteObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    if (quoteLines.length) quoteObserver.observe(document.getElementById("quote"));
+  }
+
+  /* =======================================================
+     DATE COMPARISON (21 Agustus vs 23 September)
+     ======================================================= */
+  function initDateComparison() {
+    const range = document.getElementById("dateRange");
+    const result = document.getElementById("dateResult");
+    const needle = document.getElementById("compassNeedle");
+    const compare = document.getElementById("dateCompare");
+    if (!range) return;
+
+    function update() {
+      const v = parseInt(range.value, 10);
+      const angle = (v / 100) * 180; // 0 -> -90deg .. 100 -> 90deg style rotation
+      if (needle) needle.style.transform = `rotate(${(v / 100) * 180 - 90}deg)`;
+
+      if (v < 50) {
+        result.textContent = "HISTORICAL MEMORY";
+        result.style.color = "";
+        compare.style.filter = "brightness(0.85)";
+      } else {
+        result.textContent = v === 100 ? "23 SEPTEMBER — HARI MARITIM NASIONAL" : "OFFICIAL RECOGNITION";
+        result.style.color = "var(--gold-soft)";
+        compare.style.filter = "brightness(1.08)";
+      }
+    }
+    range.addEventListener("input", update);
+    update();
+  }
+
+  /* =======================================================
+     TIMELINE (scrollytelling: kapal bergerak, tahun membesar)
+     ======================================================= */
+  function initTimeline() {
+    const rail = document.getElementById("timelineRail");
+    const fill = document.getElementById("railFill");
+    const ship = document.getElementById("railShip");
+    const items = document.querySelectorAll(".timeline-item");
+    if (!rail || !items.length) return;
+
+    function onScroll() {
+      const railRect = rail.getBoundingClientRect();
+      const railHeight = rail.offsetHeight;
+      const viewCenter = window.innerHeight * 0.5;
+      let progress = (viewCenter - railRect.top) / railHeight;
+      progress = Math.max(0, Math.min(1, progress));
+
+      fill.style.height = progress * 100 + "%";
+      if (!reduceMotion) ship.style.top = progress * railHeight + "px";
+
+      items.forEach((item) => {
+        const r = item.getBoundingClientRect();
+        const active = r.top < window.innerHeight * 0.6 && r.bottom > window.innerHeight * 0.2;
+        item.classList.toggle("is-active", active);
+      });
+    }
+    document.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* =======================================================
+     WHY IT MATTERS (editorial 2x2, click -> fullscreen overlay)
+     ======================================================= */
+  function initWhyItMatters() {
+    const items = document.querySelectorAll(".why-item");
+    const overlay = document.getElementById("whyOverlay");
+    const closeBtn = document.getElementById("whyClose");
+    const numEl = document.getElementById("whyOverlayNum");
+    const titleEl = document.getElementById("whyOverlayTitle");
+    const textEl = document.getElementById("whyOverlayText");
+    if (!items.length || !overlay) return;
+
+    const DATA = [
+      { title: "BUDAYA BAHARI", text: "Mengikis mentalitas berbasis daratan dan mengembalikan jati diri asli Indonesia sebagai pelaut tangguh." },
+      { title: "EKONOMI LAUT BERKELANJUTAN", text: "Optimalisasi potensi perikanan, energi bawah laut, dan industri pariwisata bahari global." },
+      { title: "KEDAULATAN & PERTAHANAN", text: "Meningkatkan kepedulian atas pengamanan batas wilayah laut dari ancaman ilegal atau klaim asing." },
+      { title: "KONEKTIVITAS ANTARPULAU", text: "Mendorong percepatan infrastruktur tol laut demi pemerataan logistik nasional." }
+    ];
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        const idx = parseInt(item.getAttribute("data-index"), 10);
+        const d = DATA[idx];
+        numEl.textContent = "0" + (idx + 1);
+        titleEl.textContent = d.title;
+        textEl.textContent = d.text;
+        overlay.classList.add("is-open");
+        overlay.setAttribute("aria-hidden", "false");
+      });
+    });
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+    });
+  }
+
+  /* =======================================================
+     FIVE PILLARS (compass interaktif)
+     ======================================================= */
+  function initPillars() {
+    const ring = document.getElementById("pillarsRing");
+    const nodes = document.querySelectorAll(".pillars-compass__node");
+    const countEl = document.getElementById("pillarCount");
+    const titleEl = document.getElementById("pillarTitle");
+    const textEl = document.getElementById("pillarText");
+    const prevBtn = document.getElementById("pillarPrev");
+    const nextBtn = document.getElementById("pillarNext");
+    if (!ring || !nodes.length) return;
+
+    const PILLARS = [
+      { title: "BUDAYA MARITIM", text: "Rekonstruksi identitas masyarakat Indonesia yang sadar akan pentingnya laut." },
+      { title: "SUMBER DAYA LAUT", text: "Menjaga kedaulatan pangan laut dan tata kelola energi di perairan." },
+      { title: "INFRASTRUKTUR & KONEKTIVITAS", text: "Pembangunan pelabuhan laut dalam, jaringan logistik, serta industri galangan kapal." },
+      { title: "DIPLOMASI MARITIM", text: "Menjalin kemitraan internasional guna meminimalkan konflik di wilayah perairan." },
+      { title: "PERTAHANAN MARITIM", text: "Penguatan sistem pengamanan laut oleh TNI AL dan Bakamla demi stabilitas negara." }
+    ];
+    let activeIndex = 0;
+
+    function setActive(index) {
+      activeIndex = (index + PILLARS.length) % PILLARS.length;
+      const p = PILLARS[activeIndex];
+      countEl.textContent = "0" + (activeIndex + 1) + " / 05";
+      titleEl.textContent = p.title;
+      textEl.textContent = p.text;
+      nodes.forEach((n) => n.classList.toggle("is-active", parseInt(n.getAttribute("data-index"), 10) === activeIndex));
+
+      const rotation = -activeIndex * 72;
+      ring.style.transform = `rotate(${rotation}deg)`;
+      nodes.forEach((n) => {
+        n.style.transform = n.style.transform; // biarkan CSS var --a menangani posisi dasar
+      });
+      // counter-rotate node agar teks tetap tegak: atur ulang via CSS var pada ring saja
+    }
+
+    nodes.forEach((n) => {
+      n.addEventListener("click", () => setActive(parseInt(n.getAttribute("data-index"), 10)));
+    });
+    prevBtn.addEventListener("click", () => setActive(activeIndex - 1));
+    nextBtn.addEventListener("click", () => setActive(activeIndex + 1));
+
+    setActive(0);
+  }
+
+  /* =======================================================
+     FUTURE SECTION (ship sails away, map fades in, replay)
+     ======================================================= */
+  function initFuture() {
+    const future = document.getElementById("future");
+    const ship = document.getElementById("futureShip");
+    const map = document.getElementById("futureMap");
+    const replayBtn = document.getElementById("replayBtn");
+    if (!future) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!reduceMotion) {
+              ship.style.transform = "translate(120px,-30px) scale(0.5)";
+              ship.style.opacity = "0.4";
+            }
+            map.classList.add("is-visible");
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(future);
+
+    replayBtn.addEventListener("click", () => {
+      document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  /* =======================================================
+     SOUND (ambience laut sintetis via Web Audio API — opsional)
+     ======================================================= */
+  function initSound() {
+    const toggle = document.getElementById("soundToggle");
+    const label = document.getElementById("soundLabel");
+    if (!toggle) return;
+
+    let audioCtx = null;
+    let noiseSource = null;
+    let gainNode = null;
+    let isPlaying = false;
+
+    function buildOceanAmbience() {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const bufferSize = 2 * audioCtx.sampleRate;
+      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      let lastOut = 0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        output[i] = (lastOut + 0.02 * white) / 1.02;
+        lastOut = output[i];
+        output[i] *= 3.2;
+      }
+      noiseSource = audioCtx.createBufferSource();
+      noiseSource.buffer = noiseBuffer;
+      noiseSource.loop = true;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.value = 700;
+
+      gainNode = audioCtx.createGain();
+      gainNode.gain.value = 0;
+
+      noiseSource.connect(filter).connect(gainNode).connect(audioCtx.destination);
+      noiseSource.start(0);
+    }
+
+    toggle.addEventListener("click", () => {
+      try {
+        if (!audioCtx) buildOceanAmbience();
+        isPlaying = !isPlaying;
+        toggle.setAttribute("aria-pressed", String(isPlaying));
+        label.textContent = isPlaying ? "SOUND ON" : "SOUND OFF";
+        if (gainNode) {
+          const target = isPlaying ? 0.06 : 0;
+          gainNode.gain.linearRampToValueAtTime(target, audioCtx.currentTime + 0.8);
+        }
+        if (isPlaying && audioCtx.state === "suspended") audioCtx.resume();
+      } catch (err) {
+        // Jika audio tidak tersedia/diblokir browser, website tetap berjalan normal
+        label.textContent = "SOUND OFF";
+      }
+    });
+  }
+
+  /* =======================================================
+     RESPONSIVE BEHAVIOR (nonaktifkan efek berat di perangkat kecil)
+     ======================================================= */
+  function initResponsiveBehavior() {
+    document.documentElement.classList.toggle("is-touch", isTouch);
+    document.documentElement.classList.toggle("is-reduced-motion", reduceMotion);
+  }
+
+  /* =======================================================
+     INISIALISASI
+     ======================================================= */
+  document.addEventListener("DOMContentLoaded", () => {
+    initResponsiveBehavior();
+    initLoader();
+    initNavigation();
+    initScrollProgress();
+    initCursor();
+    initHero();
+    initMap();
+    initScrollReveal();
+    initDateComparison();
+    initTimeline();
+    initWhyItMatters();
+    initPillars();
+    initFuture();
+    initSound();
+  });
+})();
+
+</script>
+</body>
+</html>
